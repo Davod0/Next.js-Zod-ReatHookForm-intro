@@ -1,20 +1,16 @@
 "use client"
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { registerUser } from "./actions";
 import { User, UserSchema } from "./schema";
 
-
-
 export default function Home() {
-
   //Från react-hook-form används för att validera formulär.
-  const form = useForm<User>({
-    resolver: zodResolver(UserSchema),
-    mode: "onBlur"
-  });
+    const form = useForm<User>({
+      resolver: zodResolver(UserSchema),
+      mode: "onBlur"
+    });
 
   const register = (user: User) => {
     console.log(user);
